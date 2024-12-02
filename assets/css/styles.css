@@ -50,9 +50,11 @@ nav a:active{
 }
 
 .img-canadense {
-    height: 340px;
-    border-radius: 20px;
-    box-shadow: rgba(0, 0, 0, 0.932) 0px 5px 15px;
+    object-fit: cover;
+    max-width: 500px;
+    height: auto;
+    border-radius: 35px;
+    box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px;
 }
 
 main {
@@ -79,7 +81,8 @@ h2 {
 p {
     color: #ffffff;
     text-align: left;
-    width: 665px;
+
+    max-width: 665px;
     font-size: 18px;
     font-weight: 500;
     text-align: justify;
@@ -88,9 +91,11 @@ p {
 /* Visão Geral*/
 
 .img-beleza-geral {
-    height: 400px;
+    object-fit: cover;
+    max-width: 500px;
+    height: auto;
     border-radius: 35px;
-    box-shadow: rgba(0, 0, 0, 0.932) 0px 5px 15px;
+    box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px;
 }
 
 /* Belezas Naturais*/
@@ -104,11 +109,11 @@ p {
 text-align: center;
 }
 
-.img-naturais {
+/* .img-naturais {
     height: 300px;
     border-radius: 35px;
     box-shadow: rgba(0, 0, 0, 0.932) 0px 5px 15px;
-}
+} */
 .h2-parques {
     width: 500px;
     margin-bottom: 0;
@@ -156,7 +161,7 @@ li {
     color: #ffffff;
     font-size: 18px;
     font-weight: 500;
-    
+    padding: 5px;
     text-align: justify;
     
 }
@@ -196,16 +201,63 @@ nav a:hover, .mapa:hover {
 
 }
 
-.img-canadense, .img-beleza-geral, .img-naturais, .img-curiosidades {
+.img-canadense, .img-naturais, .img-curiosidades {
     object-fit: cover;
     width: 100%;
-    max-width: 500px; /* ajusta o tamanho máximo para não ultrapassar o layout */
+    max-width: 500px;
     height: auto;
     border-radius: 35px;
     box-shadow: rgba(0, 0, 0, 0.8) 0px 5px 15px;
 }
 
-/* Ajuste para telas menores */
+   details {
+    margin: 30px 0;
+    padding: 10px;
+    border: 5px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #e6092be8;
+   
+}
+
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+
+summary:hover {
+    text-decoration: underline;
+}
+
+
+details[open] {
+    background-color: #ffeaea46;
+    border-color: #e6092ba8;
+}
+
+details p {
+    margin-top: 10px;
+    line-height: 1.5;
+    color: #333;
+}
+
+.text{
+color: #ffffff;
+}
+
+@media (max-width: 1325px) {
+    p{
+        max-width: 630px;
+    }
+
+    details {
+        max-width: 630px;
+    }
+} 
+
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -252,3 +304,52 @@ nav a:hover, .mapa:hover {
         margin-bottom: 0;
     }
  }
+
+ button {
+    color: #ffffff;
+    background-color: #C51111;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+button:hover{
+    font-size: 15px;
+    background-color: #ca2f2f;
+    transition: .5s ease-in-out;
+}
+
+button:active{
+    background-color: #ffc7c7;
+}
+
+.section-contato{
+    display: grid;
+}
+.mascara-formulario{
+    visibility: hidden;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
+    transition: visibility 1s ease-in-out;
+}
+.formulario-contato {
+    background-color: #ffffff;
+    display: flex;
+    gap: 18px;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    padding: 20px;
+    border-radius: 10px;
+    top: 30%;
+    left: -300px;
+    transition: left 1s ease-in-out;
+}
